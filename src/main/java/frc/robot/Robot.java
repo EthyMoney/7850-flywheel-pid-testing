@@ -78,26 +78,26 @@ public class Robot extends TimedRobot {
     m_pidController.setOutputRange(kMinOutput, kMaxOutput);
 
     // display PID coefficients on SmartDashboard
-    SmartDashboard.putNumber("P Gain", kP);
-    SmartDashboard.putNumber("I Gain", kI);
-    SmartDashboard.putNumber("D Gain", kD);
-    SmartDashboard.putNumber("I Zone", kIz);
-    SmartDashboard.putNumber("Feed Forward", kFF);
-    SmartDashboard.putNumber("Max Output", kMaxOutput);
-    SmartDashboard.putNumber("Min Output", kMinOutput);
+    // SmartDashboard.putNumber("P Gain", kP);
+    // SmartDashboard.putNumber("I Gain", kI);
+    // SmartDashboard.putNumber("D Gain", kD);
+    // SmartDashboard.putNumber("I Zone", kIz);
+    // SmartDashboard.putNumber("Feed Forward", kFF);
+    // SmartDashboard.putNumber("Max Output", kMaxOutput);
+    // SmartDashboard.putNumber("Min Output", kMinOutput);
     SmartDashboard.putNumber("Run Setpoint", runSetpoint);
   }
 
   @Override
   public void teleopPeriodic() {
     // read PID coefficients from SmartDashboard
-    double p = SmartDashboard.getNumber("P Gain", 0);
-    double i = SmartDashboard.getNumber("I Gain", 0);
-    double d = SmartDashboard.getNumber("D Gain", 0);
-    double iz = SmartDashboard.getNumber("I Zone", 0);
-    double ff = SmartDashboard.getNumber("Feed Forward", 0);
-    double max = SmartDashboard.getNumber("Max Output", 0);
-    double min = SmartDashboard.getNumber("Min Output", 0);
+    double p = .0009;//SmartDashboard.getNumber("P Gain", 0);
+    double i = 0;//SmartDashboard.getNumber("I Gain", 0);
+    double d = .005;//SmartDashboard.getNumber("D Gain", 0);
+    double iz = 0;//SmartDashboard.getNumber("I Zone", 0);
+    double ff = 0.000185;//SmartDashboard.getNumber("Feed Forward", 0);
+    double max = 1;//SmartDashboard.getNumber("Max Output", 0);
+    double min = 0;//SmartDashboard.getNumber("Min Output", 0);
     double run = SmartDashboard.getNumber("Run Setpoint", 0);
 
     // if PID coefficients on SmartDashboard have changed, write new values to
